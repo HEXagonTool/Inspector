@@ -1,0 +1,19 @@
+{
+    "name": "hexagon-tool/inspector",
+    "description": "A simple Inspector debugging library.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "HEXagonTool\\Inspector\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HEXagon developer",
+            "email": "h3xagon.tool@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
