@@ -25,19 +25,24 @@ class Inspector {
         return self::$config->status === 'active';
     }
 
-    public static function __callStatic($name, $arguments) {
+    // public static function __callStatic($name, $arguments) {
+    //     if (self::isActive()) {
+    //         if (method_exists(self::class, $name)) {
+    //             return call_user_func_array([self::class, $name], $arguments);
+    //         }
+    //     }
+    // }
+
+    public static function message($data) {
         if (self::isActive()) {
-            if (method_exists(self::class, $name)) {
-                return call_user_func_array([self::class, $name], $arguments);
-            }
+            echo $data;
         }
     }
 
-    public static function message($data) {
-        echo $data;
-    }
-
     public static function dump($data, $title = null, $options = []) {
-        include self::$config->templates_path . '/dump.php'; 
+        if (self::isActive()) {
+            include self::$config->templates_path . '/dump.php';
+        }
+         
     }
 }
